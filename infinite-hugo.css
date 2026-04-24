@@ -1,0 +1,152 @@
+:root {
+  --tile-w: 220;
+  --tile-h: 220;
+  --gap-x: 20;
+  --gap-y: 20;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 0%, #18202f 0%, #0c0f17 55%);
+  color: #f4f6ff;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+#infinite {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: grab;
+}
+
+#infinite.dragging { cursor: grabbing; }
+
+#world {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+}
+
+.tile-instance,
+.tile {
+  position: absolute;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #101726;
+  border: 1px solid #2a3248;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.tile img,
+.tile-instance img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tile--big { width: calc(var(--tile-w) * 1px); height: calc(var(--tile-h) * 1px); }
+.tile--half { width: calc(var(--tile-w) * 1px); height: calc(var(--tile-h) * 0.5px); }
+.tile--tall { width: calc(var(--tile-w) * 0.5px); height: calc(var(--tile-h) * 1px); }
+
+#tile-templates { display: none; }
+
+#grab {
+  position: absolute;
+  z-index: 4;
+  top: 22px;
+  left: 24px;
+  padding: 10px 12px;
+  border: 1px solid #3a4563;
+  border-radius: 12px;
+  background: rgba(11, 15, 23, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.grab-head {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.grab-indicator {
+  margin-top: 6px;
+  color: #9fb4ff;
+  font-size: 0.78rem;
+}
+
+.coins {
+  position: absolute;
+  z-index: 4;
+  top: 24px;
+  right: 24px;
+}
+
+.coin-item {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #3f4d74;
+  background: rgba(53, 74, 138, 0.35);
+}
+
+.coin-item.overlap-1 { left: 0; }
+.coin-item.overlap-2 { left: -8px; }
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 7, 11, 0.65);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-card {
+  width: min(860px, 90vw);
+  min-height: 340px;
+  border-radius: 20px;
+  border: 1px solid #2f3b58;
+  background: #0d1320;
+  padding: 24px;
+}
+
+.overlay-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: 1px solid #43517a;
+  background: #11192d;
+  color: #dbe3ff;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+#overlayLogo,
+#overlayCoin {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+.no-scroll { overflow: hidden; }
+
+.tile-ghost { pointer-events: none; }

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Hugo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="infinite">
+      <div id="grab">
+        <h1 class="grab-head">Drag To Explore</h1>
+        <h1 class="grab-head">Infinite Wall</h1>
+        <div class="grab-indicator">Grab + Drag</div>
+      </div>
+
+      <div class="coins">
+        <span class="coin-item overlap-1">+</span>
+        <span class="coin-item overlap-2">+</span>
+      </div>
+
+      <div id="world"></div>
+
+      <div id="overlay" aria-hidden="true">
+        <button data-close="1" class="overlay-close">Close</button>
+        <div class="overlay-card">
+          <img id="overlayLogo" alt="Logo" />
+          <h2 id="overlayTitle">Your Heading</h2>
+          <h3 id="overlayName">Your Name</h3>
+          <p id="overlayPosition"></p>
+          <img id="overlayCoin" alt="Coin" />
+        </div>
+      </div>
+
+      <div id="tile-templates" aria-hidden="true">
+        <article class="tile tile--big" data-title="Project Alpha" data-name="Hugo Team" data-position="Interactive Direction" data-logo="https://images.unsplash.com/photo-1633409361618-c73427e4e206?w=400" data-coin="https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?w=160">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" alt="Tile" />
+        </article>
+        <article class="tile tile--half" data-title="Launch Story" data-name="Motion Unit" data-position="Design Systems" data-logo="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400" data-coin="https://images.unsplash.com/photo-1639322537138-5e513100b36e?w=160">
+          <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92eee?w=900" alt="Tile" />
+        </article>
+        <article class="tile tile--tall" data-title="Tall Frame" data-name="Lab 7" data-position="Visual Engineering" data-logo="https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=400" data-coin="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=160">
+          <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=900" alt="Tile" />
+        </article>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
