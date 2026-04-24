@@ -24,6 +24,6 @@ Infinite draggable tile wall for Webflow export.
 ## Local Run
 
 ```bash
-cd /Users/robertaperios/codepen-backup/pen-154-infinite-hugo
+cd pen-154-infinite-hugo
 python3 -m http.server 5173
 ```
