@@ -25,5 +25,5 @@ Infinite draggable tile wall for Webflow export.
 
 ```bash
 cd pen-154-infinite-hugo
-python3 -m http.server 5173
+python3 -m http.server 8888
 ```
